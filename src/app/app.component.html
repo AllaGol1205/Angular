@@ -1,1 +1,43 @@
-<p>AppComponent works!</p>
+<div class="min-w-fit
+min-h-screen
+bg-teal-900
+flex
+items-center
+justify-center
+px-5
+py-5
+">
+  <div class="w-full
+    mx-auto
+    rounded-xl
+    shadow-xl
+    text-gray-800
+    relative
+    overflow-hidden
+    max-w-xl">
+
+    <h1 class="text-center text-white py-10 text-3xl font-bold"> {{ title }}</h1>
+
+    <!--    calculator screen-->
+    <div class="w-full h-40 bg-gradient-to-b from-gray-800 to-gray-700 text-right">
+      <!--    function screen-->
+      <div class="w-full py-5 px-6 text-2xl text-white font-thin"> {{ function ? firstNumber + ' ' + function : 'No function'}}</div>
+      <div class="w-full py-5 px-6 text-6xl text-white font-thin"> {{ calNumberStr }}</div>
+    </div>
+
+    <!--    buttons area-->
+    <div class="w-full bg-gradient-to-b from-red-500 to-red-800">
+      <!--      1st line-->
+      <div *ngFor="let line of buttons" class="flex w-full">
+        <div
+          [ngClass]="{'w-2/4': btn.w==2,'w-1/4': btn.w!=2}"
+          *ngFor="let btn of line" class="border-r border-b border-red-400">
+          <button (click)="btnClick(btn.text, btn.isFunc )"
+            class="w-full h-16 outline-none hover:bg-red-700 hover:bg-opacity-20
+                  text-white text-opacity-50 text-2xl font-light">{{ btn.text }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
