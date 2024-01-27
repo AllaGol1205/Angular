@@ -1,0 +1,25 @@
+.row{
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  /*font-size: 20px;*/
+}
+
+.column{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid grey;
+  font-size: 20px;
+}
+
+.even { background: saddlebrown; }
+.odd { background: khaki; }
+
+p{ font-size: 20px; margin: 10px;}
+
+.errorRed{
+  border: 5px solid red;
+}
+
+

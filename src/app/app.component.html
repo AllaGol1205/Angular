@@ -1,1 +1,17 @@
-<p>AppComponent works!</p>
+<div style="width: 321px; font-size: 0; box-sizing: content-box;" [ngClass]="{ errorRed: error }">
+
+  <div *ngFor="let i of [0,1,2,3,4,5,6,7]" class="row" >
+
+    <div *ngFor="let j of [0,1,2,3,4,5,6,7]" class="column"
+         [ngClass]=" { even:(i+j)%2===0, odd:(i+j)%2!=0}"
+         (click)="move(i,j)">
+
+      <p *ngIf=" i===posX && j===posY"> A </p>
+
+      <p *ngIf="board[i][j]!=0 && (i!= posX || j != posY)">{{board[i][j]}}</p>
+
+    </div>
+
+  </div>
+
+</div>
